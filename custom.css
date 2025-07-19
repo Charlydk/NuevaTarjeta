@@ -4,7 +4,11 @@ span {
 
 h2 {
     font-weight: bold;
-    text-shadow: 3px 2px 4px rgb(255, 255, 255);
+    text-shadow: 3px 2px 4px rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.356);
+    padding: 5px 10px;
+    border-radius: 8px;
+    
 }
 
 @keyframes fadeInDown {
@@ -27,3 +31,47 @@ h2 {
 .animate-slide-in-up.delay-200 { animation-delay: 0.2s; }
 .animate-slide-in-up.delay-300 { animation-delay: 0.3s; }
 .animate-bounce-icon { animation: bounce 1.5s infinite; }
+
+
+
+.slider {
+	width: 70%;
+	margin: auto;
+	overflow: hidden;
+    
+}
+
+.slider{
+    border-radius: 10%;
+    background-color: rgb(0, 0, 0);
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: cambio 15s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+    transform: scale(1.0);
+}
+
+@keyframes cambio {
+		
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
