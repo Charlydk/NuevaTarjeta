@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belen y Agustin - ¡Nos Casamos!</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="./custom.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'great-vibes': ['Great Vibes', 'cursive'],
+                        'kalam': ['Kalam', 'cursive'],
+                        'dm-sans': ['DM Sans', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-pink': '#FF69B4', // Un rosa que podemos usar
+                        'dark-gray': '#333333',
+                        'light-gray-bg': '#EEEEEE', // Color para fondos de sección claros
+                        // Se eliminan los colores translúcidos personalizados, se usará Tailwind's /opacity
+                    }
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body class="font-dm-sans text-black bg-light-gray-bg tracking-wide min-h-screen antialiased">
+
+    <div class="max-w-screen-xl mx-auto bg-white shadow-lg overflow-hidden">
+        <section id="portada" class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                <source src="./assets/video/tomados_de_la_mano.mp4" type="video/mp4">
+                Tu navegador no soporta el video de fondo.
+            </video>
+
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+
+            <div class="relative z-10 p-8">
+                <h1 class="font-great-vibes tracking-wide text-6xl sm:text-7xl md:text-8xl mb-4 drop-shadow-lg">Belen & Agustin</h1>
+                <p class="font-kalam text-3xl sm:text-4xl md:text-5xl drop-shadow-md">¡Nos Casamos!</p>
+                <p class="font-kalam mt-8 text-xl sm:text-2xl font-light">Con amor los invitamos a compartir este día tan especial.</p>
+            </div>
+        </section>
+      
+        <div class="bg-cover bg-center bg-fixed" style="background-image: url('./assets/img/main_section_background.jpg');">
+            
+            <section id="ceremonia-civil" class="relative py-16 px-6 bg-light-gray-bg/50 text-center">
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <img src="./assets/img/check.gif" alt="Registro Civil" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-6xl sm:text-6xl mb-6 text-primary-pink" >Ceremonia Civil</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span>LUGAR:</span> Registro Civil Villa Lujan</p>                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN:</span> Sgto. Cabral 261, San Miguel de Tucuman</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 26/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span >HORARIO:</span> 11:00 HS</p>
+                    <a href="https://maps.app.goo.gl/r8iQ5wmW2oxKVbRv5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        CÓMO LLEGAR
+                    </a>
+                </div>
+            </section>
+
+            <section id="ceremonia-religiosa" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
+                
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <img src="./assets/img/iglesia.gif" alt="Iglesia" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink">Ceremonia Religiosa</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span>PARROQUIA:</span> Nuestra Señora de Luján</p>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN::</span> Don bosco 2645 - San Miguel de Tucuman</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 27/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span>HORARIO:</span> 21:10 HS</p>
+                    <a href="https://maps.app.goo.gl/FqECGvCoziS1a77w5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        CÓMO LLEGAR
+                    </a>
+                </div>
+            </section>
+
+            <section id="recepcion" class="relative py-16 px-6 bg-light-gray-bg/50 text-dark-gray text-center">
+                <div class="max-w-3xl mx-auto">
+                    <img src="./assets/img/reciencasados.gif" alt="recien casados" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Fiesta</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span >SALÓN:</span> ACIT </p>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN::</span> av. Aconquija 867, Yerba buena</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 27/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"><span>HORARIO:</span> 21:45 HS</p>
+                    <a href="https://maps.app.goo.gl/XFhReTtTYKPCjYYY8" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        VER UBICACIÓN
+                    </a>
+                </div>
+            </section>
+
+            <section id="countdown" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-10 animate-fade-in-down">¡Se acerca el gran día!</h2>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-dark-gray mt-8 mb-12">
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up">
+                            <p id="days" class="text-5xl font-bold text-dark-gray"></p>
+                            <span class="text-lg mt-2 font-medium text-gray-600">Días</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-100">
+                            <p id="hours" class="text-5xl font-bold text-dark-gray"></p>
+                            <span class="text-lg mt-2 font-medium text-gray-600">Horas</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-200">
+                            <p id="minutes" class="text-5xl font-bold text-dark-gray"></p>
+                            <span class="text-lg mt-2 font-medium text-gray-600">Minutos</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-300">
+                            <p id="sec" class="text-5xl font-bold text-dark-gray"></p>
+                            <span class="text-lg mt-2 font-medium text-gray-600">Segundos</span>
+                        </div>
+                    </div>
+                    <p class="mt-12 text-lg sm:text-xl max-w-2xl mx-auto font-inter leading-relaxed"><span>Tu presencia hará de este día un momento inolvidable. Te esperamos con alegría.</span></p>
+                </div>
+            </section>
+
+            <section id="confirmacion" class="relative py-16 px-6 bg-light-gray-bg/50 text-center">
+                
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <img src="./assets/img/sobre.gif" alt="sobre" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink">Confirmá tu Asistencia</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-8">¡Tu presencia es muy importante para nosotros! Por favor, confirmanos tu asistencia antes del [Fecha Límite].</p>
+                    <a href="https://forms.gle/HWBx5h6DCfrcTqFj8" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                        CONFIRMAR ASISTENCIA
+                    </a>
+                </div>
+            </section>
+
+            <section id="dress-code-section" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
+                <div class="max-w-3xl mx-auto">
+                    <img src="./assets/img/ropa_traje_vestido.jpg" alt="Dress Code" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Dress Code</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4">Pedimos asistir con vestimenta **Elegante**.</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8">¡Importante! Por favor, **evitar el color blanco**.</p>
+                </div>
+            </section>
+
+            <section id="regalos" class="relative py-16 px-6 bg-light-gray-bg/50 text-dark-gray text-center">
+                <div class="max-w-3xl mx-auto">
+                    <img src="./assets/img/gifbox.gif" alt="caja de regalos" class="rounded-full w-56 h-56 mb-6 mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Regalos</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-8 font-bold" >Tu regalo es tu presencia. Si deseas hacernos uno o un aporte para nuestra luna de miel sería el mejor obsequio.</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8">CBU: 0000003100009496507226</p>
+                </div>
+            </section>
+
+            <section id="footer" class="relative py-16 px-6 bg-white/50 text-white text-center">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6">¡Gracias!</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4">Belen & Agustin</p>
+                    <p class="text-md sm:text-lg opacity-80 mt-8">© 2025 - Todos los derechos reservados.</p>
+                </div>
+            </section>
+
+        </div> </div> <script src="./js/Music.js"></script>
+    <audio id="music" autoplay loop preload="auto">
+        <source src="./assets/Audio/ED SHEERAN - Perfect.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta audio de...
+    </audio>
+
+</body>
+<script src="./js/Countdown.js"></script>
+</html>
