@@ -15,6 +15,17 @@
 
     <link rel="stylesheet" href="./custom.css">
 
+
+    <button class="btn-flotante-play" onclick = play() type="button"><img src="./assets/img/play.png" alt="play"> </button>
+    <button class="btn-flotante-pause" onclick = pause() type="button"><img src="./assets/img/pause.png" alt="pause"></button>
+
+    
+    <audio id="music" autoplay loop preload="auto">
+        <source src="./assets/audio/CarlosRivera-OtrasVidas.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta audio de...
+    </audio>
+
+
     <script>
         tailwind.config = {
             theme: {
@@ -37,6 +48,23 @@
     
 </head>
 <body class="font-dm-sans text-black bg-light-gray-bg tracking-wide min-h-screen antialiased">
+
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 class="font-great-vibes text-4xl text-primary-pink mb-6">¡Bienvenidos!</h2>
+            <p class="font-inter text-lg text-dark-gray mb-8">🌺 Hay un sonido que forma parte de esta experiencia… ¿Te gustaría escucharlo
+            </p>
+            <div class="flex justify-center gap-4">
+                <button id="playMusicButton" class="bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    Sí, ¡claro!
+                </button>
+                <button id="noMusicButton" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    No, gracias
+                </button>
+            </div>
+            <p id="loadingMessage" class="text-sm text-gray-600 mt-6 hidden">Cargando...</p>
+        </div>
+    </div>
 
     <div class="max-w-screen-xl mx-auto bg-white shadow-lg overflow-hidden">
         <section id="portada" class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
@@ -209,12 +237,10 @@
         });
     </script>
     
-    <script src="./js/Music.js"></script>
-    <audio id="music" autoplay loop preload="auto">
-        <source src="./assets/Audio/ED SHEERAN - Perfect.mp3" type="audio/mpeg">
-        Tu navegador no soporta la etiqueta audio de...
-    </audio>
+
+    
 
 </body>
 <script src="./js/Countdown.js"></script>
+<script src="./js/Music.js"></script>
 </html>
