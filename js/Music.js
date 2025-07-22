@@ -1,73 +1,103 @@
+// js/Music.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const music = document.getElementById('music');
     const welcomeModal = document.getElementById('welcomeModal');
-    const playMusicButton = document.getElementById('playMusicButton');
-    const noMusicButton = document.getElementById('noMusicButton');
+    const playMusicButtonModal = document.getElementById('playMusicButtonModal'); // Botón "Sí, ¡claro!" del modal
+    const noMusicButtonModal = document.getElementById('noMusicButtonModal'); // Botón "No, gracias" del modal
+    const musicToggleButton = document.getElementById('musicToggleButton'); // El botón flotante principal
     // const loadingMessage = document.getElementById('loadingMessage'); // Si decides usar el mensaje de carga
+    
+    let isPlaying = false; // Variable para controlar el estado de reproducción
 
-    if (music && welcomeModal && playMusicButton && noMusicButton) {
-        // Muestra el modal apenas el DOM esté cargado
-        welcomeModal.classList.remove('hidden'); // Asegurarse de que el modal no tenga display:none en CSS inicial si usas una clase 'hidden'
+    // Función para actualizar el icono y la clase del botón flotante principal
+    function updateToggleButtonUI() {
+        if (isPlaying) {
+            musicToggleButton.innerHTML = '<i class="fas fa-pause"></i>'; // Icono de pausa
+            musicToggleButton.classList.add('playing');
+        } else {
+            musicToggleButton.innerHTML = '<i class="fas fa-music"></i>'; // Icono de música o play
+            musicToggleButton.classList.remove('playing');
+        }
+        // Aseguramos que el botón flotante sea visible una vez que el modal se cierra
+        musicToggleButton.classList.add('active'); 
+    }
 
-        // Listener para el botón "Sí, ¡claro!"
-        playMusicButton.addEventListener('click', () => {
-            // Intenta reproducir la música
+    // Asegúrate de que el audio y los botones existan
+    if (music && welcomeModal && playMusicButtonModal && noMusicButtonModal && musicToggleButton) {
+        // Desactivar scroll del body al inicio mientras el modal esté visible
+        document.body.style.overflow = 'hidden';
+
+        // Listener para el botón "Sí, ¡claro!" del modal
+        playMusicButtonModal.addEventListener('click', () => {
             music.play().then(() => {
-                console.log("Música reproducida con éxito.");
-                
-                loadingMessage.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    welcomeModal.classList.add('hidden'); // Oculta el modal
-                    // Opcional: Desactivar scroll del body mientras el modal está abierto
-                    document.body.style.overflow = 'auto'; 
-                }, 1500); // Pequeño retraso para la transición CSS
-                
-            }).catch(e => {
-                console.warn("Error al intentar reproducir la música (posible bloqueo de autoplay aún con interacción):", e);
-                // Si aún con el clic del usuario hay un problema (raro, pero posible en casos extremos),
-                // aún así cerramos el modal y seguimos adelante.
+                isPlaying = true;
+                console.log("Música reproducida con éxito por interacción del modal.");
+                // Oculta el modal y permite el scroll
                 welcomeModal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
-                alert("No pudimos reproducir la música. Por favor, asegúrate de que el sonido esté activado en tu dispositivo.");
+                updateToggleButtonUI(); // Actualiza el botón flotante a estado de "pausa"
+            }).catch(e => {
+                console.warn("Error al intentar reproducir la música (posible bloqueo de autoplay aún con interacción):", e);
+                // Si aún con el clic del usuario hay un problema, cerramos el modal y mostramos alerta
+                welcomeModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+                updateToggleButtonUI(); // Asegura que el botón flotante muestre "play"
+                alert("Tu navegador ha bloqueado la reproducción automática de la música. Puedes intentar activarla manualmente con el botón flotante.");
             });
         });
 
-        // Listener para el botón "No, gracias"
-        noMusicButton.addEventListener('click', () => {
+        // Listener para el botón "No, gracias" del modal
+        noMusicButtonModal.addEventListener('click', () => {
             music.pause(); // Asegúrate de que no se reproduzca
-            music.currentTime = 0; // Reinicia el audio por si acaso
+            music.currentTime = 0; // Reinicia el audio
+            isPlaying = false;
             console.log("Música no reproducida por elección del usuario.");
-            // Oculta el modal inmediatamente
+            // Oculta el modal y permite el scroll
             welcomeModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
+            updateToggleButtonUI(); // Asegura que el botón flotante muestre "play"
         });
 
-        // Opcional: Desactivar el scroll del body mientras el modal esté visible
-        // Esto previene que el usuario vea el contenido principal antes de interactuar.
-        document.body.style.overflow = 'hidden';
+        // Listener para el botón flotante principal (controla play/pause después del modal)
+        musicToggleButton.addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                isPlaying = false;
+            } else {
+                music.play().then(() => {
+                    isPlaying = true;
+                }).catch(e => {
+                    console.error("Error al reproducir desde el botón flotante:", e);
+                    isPlaying = false;
+                    alert("No se pudo reproducir la música.");
+                });
+            }
+            updateToggleButtonUI(); // Actualiza el icono del botón flotante
+        });
+
+        // Eventos del propio audio para mantener el estado sincronizado
+        music.addEventListener('play', () => {
+            isPlaying = true;
+            updateToggleButtonUI();
+        });
+
+        music.addEventListener('pause', () => {
+            isPlaying = false;
+            updateToggleButtonUI();
+        });
+
+        // Inicializa el estado del botón flotante al cargar la página (oculto y con icono de música)
+        musicToggleButton.classList.remove('active'); // Asegura que inicie oculto
+        musicToggleButton.innerHTML = '<i class="fas fa-music"></i>'; // Icono inicial de música
 
     } else {
-        console.error("Algunos elementos necesarios para el modal o el audio no fueron encontrados.");
-        // Si no se encuentran, al menos intenta ocultar el modal si existe para no bloquear la página
+        console.error("Algunos elementos necesarios para el modal o el audio no fueron encontrados. Asegúrate de que los IDs sean correctos.");
+        // Si hay un problema, al menos asegúrate de que el modal no bloquee la página
         if (welcomeModal) {
             welcomeModal.classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
+        // Si el botón flotante no se encuentra, no se muestra
     }
 });
-
-
-
-
-var myMusic= document.getElementById("music");
-
-function play() {
-myMusic.play();
-
-}
- 
-function pause() {
-myMusic.pause();
-
-}

@@ -33,8 +33,43 @@
     transform: translateY(-50px); /* Efecto de slide-up al cerrar */
 }
     
-
-
+/* Estilos CSS para el botón de música FLOTANTE (unificado) */
+/* Este botón controlará play/pause después del modal */
+#musicToggleButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF69B4; /* Tu primary-pink */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Para hacerlo redondo */
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Inicia oculto, se mostrará después de la interacción con el modal */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
+#musicToggleButton:hover {
+    background-color: #E05BA0; /* Un tono un poco más oscuro al hacer hover */
+    transform: scale(1.05);
+}
+#musicToggleButton.active { /* Clase para cuando el botón está visible y activo */
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+#musicToggleButton.playing {
+    background-color: #4CAF50; /* Verde, por ejemplo, cuando está reproduciendo */
+}
 
 
 span {
@@ -48,6 +83,22 @@ h2 {
     padding: 5px 10px;
     border-radius: 8px;
     
+}
+
+
+@keyframes bounce-scroll {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+.animate-bounce-scroll {
+    animation: bounce-scroll 2s infinite;
 }
 
 
@@ -92,79 +143,3 @@ h2 {
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
 }
-
-.btn-flotante-play {
-	font-size: 14px; /* Cambiar el tamaño de la tipografia */
-	text-transform: uppercase; /* Texto en mayusculas */
-	font-weight: bold; /* Fuente en negrita o bold */
-	color: #ffffff; /* Color del texto */
-	border-radius: 50px; /* Borde del boton */
-	letter-spacing: 2px; /* Espacio entre letras */
-	background-color: #534bc2; /* Color de fondo */
-	padding: 3px 6px; /* Relleno del boton */
-	position: fixed;
-	/* bottom: 89px; */
-    top: 15px;
-	right: 75px;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
-    opacity: 75%;
-}
-.btn-flotante-play:hover {
-	background-color: #6cb44f; /* Color de fondo al pasar el cursor */
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
-}
-
-.btn-flotante-play img{
-    height: 40px;
-}
-
-@media only screen and (max-width: 600px) {
- 	.btn-flotante-play {
-		font-size: 14px;
-		padding: 3px 6px;
-		/* bottom: 89px; */
-	    right: 75px;
-	}
-} 
-
-
-.btn-flotante-pause {
-	font-size: 12px; /* Cambiar el tamaño de la tipografia */
-	text-transform: uppercase; /* Texto en mayusculas */
-	font-weight: bold; /* Fuente en negrita o bold */
-	color: #ffffff; /* Color del texto */
-	border-radius: 50px; /* Borde del boton */
-	letter-spacing: 2px; /* Espacio entre letras */
-	background-color: #534bc2; /* Color de fondo */
-	padding: 3px 6px; /* Relleno del boton */
-	position: fixed;
-	/* bottom: 23px; */
-    top: 15px;
-	right: 5px;
-	transition: all 300ms ease 0ms;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	z-index: 99;
-    opacity: 75%;
-}
-.btn-flotante-pause:hover {
-	background-color: #6cb44f; /* Color de fondo al pasar el cursor */
-	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
-	transform: translateY(-7px);
-}
-
-.btn-flotante-pause img{
-    height: 40px;
-}
-
-
-@media only screen and (max-width: 600px) {
- 	.btn-flotante-pause {
-		font-size: 14px;
-		padding: 3px 6px;
-		/* bottom: 23px; */
-		right: 5px;
-	}
-} 

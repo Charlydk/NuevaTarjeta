@@ -15,16 +15,7 @@
 
     <link rel="stylesheet" href="./custom.css">
 
-
-    <button class="btn-flotante-play" onclick = play() type="button"><img src="./assets/img/play.png" alt="play"> </button>
-    <button class="btn-flotante-pause" onclick = pause() type="button"><img src="./assets/img/pause.png" alt="pause"></button>
-
-    
-    <audio id="music" autoplay loop preload="auto">
-        <source src="./assets/audio/CarlosRivera-OtrasVidas.mp3" type="audio/mpeg">
-        Tu navegador no soporta la etiqueta audio de...
-    </audio>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <script>
         tailwind.config = {
@@ -52,21 +43,27 @@
     <div id="welcomeModal" class="modal-overlay">
         <div class="modal-content">
             <h2 class="font-great-vibes text-4xl text-primary-pink mb-6">¡Bienvenidos!</h2>
-            <p class="font-inter text-lg text-dark-gray mb-8">🌺 Hay un sonido que forma parte de esta experiencia… ¿Te gustaría escucharlo
-            </p>
+            <p class="font-inter text-lg text-dark-gray mb-8">🌺 Hay un sonido que forma parte de esta experiencia… ¿Te gustaría escucharlo?</p>
             <div class="flex justify-center gap-4">
-                <button id="playMusicButton" class="bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                <button id="playMusicButtonModal" class="bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                     Sí, ¡claro!
                 </button>
-                <button id="noMusicButton" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                <button id="noMusicButtonModal" class="bg-gray-400 hover:bg-gray-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                     No, gracias
                 </button>
             </div>
             <p id="loadingMessage" class="text-sm text-gray-600 mt-6 hidden">Cargando...</p>
         </div>
     </div>
-
+    <button id="musicToggleButton" aria-label="Reproducir o pausar música">
+        <i class="fas fa-music"></i> 
+    </button>
+    <audio id="music" loop preload="auto">
+        <source src="./assets/audio/CarlosRivera-OtrasVidas.mp3" type="audio/mpeg">
+        Tu navegador no soporta la etiqueta audio de...
+    </audio>
     <div class="max-w-screen-xl mx-auto bg-white shadow-lg overflow-hidden">
+        
         <section id="portada" class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden">
             <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
                 <source src="./assets/video/tomados_de_la_mano.mp4" type="video/mp4">
@@ -80,15 +77,20 @@
                 <p class="font-kalam text-3xl sm:text-4xl md:text-5xl drop-shadow-md" data-aos="fade-right" data-aos-delay="500">¡Nos Casamos!</p>
                 <p class="font-kalam mt-8 text-xl sm:text-2xl font-light" data-aos="fade-left" data-aos-delay="1000">Con amor los invitamos a compartir este día tan especial.</p>
             </div>
-        </section>
-      
+
+            <div class="absolute bottom-8 z-10 flex flex-col items-center text-white text-lg">
+                <p>Desplazar hacia abajo</p>
+                <i class="fas fa-chevron-down text-3xl animate-bounce-scroll"></i>
+            </div>
+            </section>
+        
         <div class="bg-cover bg-center bg-fixed" style="background-image: url('./assets/img/main_section_background.jpg');">
             
             <section id="ceremonia-civil" class="relative py-16 px-6 bg-light-gray-bg/50 text-center">
                 <div class="relative z-10 max-w-3xl mx-auto">
                     <img src="./assets/img/check.gif" alt="Registro Civil" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-up" data-aos-duration="1000">
                     <h2 class="font-great-vibes text-6xl sm:text-6xl mb-6 text-primary-pink" data-aos="fade-up" data-aos-delay="200">Ceremonia Civil</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="300"><span>LUGAR:</span> Registro Civil Villa Lujan</p>                      <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400"><span>UBICACIÓN:</span> Sgto. Cabral 261, San Miguel de Tucuman</p>
+                    <p class="text-xl sm:text-2xl font-light mb-4"><span>LUGAR:</span> Registro Civil Villa Lujan</p>                      <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400"><span>UBICACIÓN:</span> Sgto. Cabral 261, San Miguel de Tucuman</p>
                     <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="500"><span>DIA:</span> 26/06/2025</p>
                     <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"><span >HORARIO:</span> 11:00 HS</p>
                     <a href="https://maps.app.goo.gl/r8iQ5wmW2oxKVbRv5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="700">
@@ -177,7 +179,7 @@
                     <img src="./assets/img/gifbox.gif" alt="caja de regalos" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-right" data-aos-duration="1000">
                     <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6" data-aos="fade-down" data-aos-delay="200">Regalos</h2>
                     <p class="text-xl sm:text-2xl font-light mb-8 font-bold" data-aos="fade-up" data-aos-delay="400">Tu regalo es tu presencia. Si deseas hacernos un aporte a nuestra nueva etapa sería un gran detalle, te lo agradecemos.</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"> <span>CBU: 0000003100009496507226</span></p>
+                    <p class="text-xl sm:text-2xl font-light mb-8"> <span>CBU: 0000003100009496507226</span></p>
                 </div>
             </section>
 
@@ -222,25 +224,21 @@
                 </div>
             </section>
 
-        </div> 
-    </div>
+        </div> </div>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            // Opciones globales aquí
-            duration: 1200, // Duración por defecto para todas las animaciones (en ms)
-            once: true,    // Las animaciones se ejecutarán solo una vez (al hacer scroll hacia abajo)
-            mirror: false, // Si las animaciones deben repetirse al hacer scroll hacia arriba (si 'once' es false)
-            offset: 120,   // Desplazamiento (en px) desde la parte superior de la ventana para activar la animación
-            easing: 'ease-in-out', // Curva de aceleración por defecto
+            duration: 1200, 
+            once: true, 
+            mirror: false, 
+            offset: 120, 
+            easing: 'ease-in-out', 
         });
     </script>
     
-
-    
+    <script src="./js/Countdown.js"></script>
+    <script src="./js/Music.js"></script>
 
 </body>
-<script src="./js/Countdown.js"></script>
-<script src="./js/Music.js"></script>
 </html>
