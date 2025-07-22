@@ -11,6 +11,8 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./custom.css">
 
     <script>
@@ -24,10 +26,9 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'primary-pink': '#FF69B4', // Un rosa que podemos usar
+                        'primary-pink': '#FF69B4',
                         'dark-gray': '#333333',
-                        'light-gray-bg': '#EEEEEE', // Color para fondos de sección claros
-                        // Se eliminan los colores translúcidos personalizados, se usará Tailwind's /opacity
+                        'light-gray-bg': '#EEEEEE',
                     }
                 }
             }
@@ -47,9 +48,9 @@
             <div class="absolute inset-0 bg-black opacity-40"></div>
 
             <div class="relative z-10 p-8">
-                <h1 class="font-great-vibes tracking-wide text-6xl sm:text-7xl md:text-8xl mb-4 drop-shadow-lg">Belen & Agustin</h1>
-                <p class="font-kalam text-3xl sm:text-4xl md:text-5xl drop-shadow-md">¡Nos Casamos!</p>
-                <p class="font-kalam mt-8 text-xl sm:text-2xl font-light">Con amor los invitamos a compartir este día tan especial.</p>
+                <h1 class="font-great-vibes tracking-wide text-6xl sm:text-7xl md:text-8xl mb-4 drop-shadow-lg" data-aos="zoom-in" data-aos-duration="1500">Belen & Agustin</h1>
+                <p class="font-kalam text-3xl sm:text-4xl md:text-5xl drop-shadow-md" data-aos="fade-right" data-aos-delay="500">¡Nos Casamos!</p>
+                <p class="font-kalam mt-8 text-xl sm:text-2xl font-light" data-aos="fade-left" data-aos-delay="1000">Con amor los invitamos a compartir este día tan especial.</p>
             </div>
         </section>
       
@@ -57,12 +58,12 @@
             
             <section id="ceremonia-civil" class="relative py-16 px-6 bg-light-gray-bg/50 text-center">
                 <div class="relative z-10 max-w-3xl mx-auto">
-                    <img src="./assets/img/check.gif" alt="Registro Civil" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-6xl sm:text-6xl mb-6 text-primary-pink" >Ceremonia Civil</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4"><span>LUGAR:</span> Registro Civil Villa Lujan</p>                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN:</span> Sgto. Cabral 261, San Miguel de Tucuman</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 26/06/2025</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span >HORARIO:</span> 11:00 HS</p>
-                    <a href="https://maps.app.goo.gl/r8iQ5wmW2oxKVbRv5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="./assets/img/check.gif" alt="Registro Civil" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-up" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-6xl sm:text-6xl mb-6 text-primary-pink" data-aos="fade-up" data-aos-delay="200">Ceremonia Civil</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="300"><span>LUGAR:</span> Registro Civil Villa Lujan</p>                      <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400"><span>UBICACIÓN:</span> Sgto. Cabral 261, San Miguel de Tucuman</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="500"><span>DIA:</span> 26/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"><span >HORARIO:</span> 11:00 HS</p>
+                    <a href="https://maps.app.goo.gl/r8iQ5wmW2oxKVbRv5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="700">
                         CÓMO LLEGAR
                     </a>
                 </div>
@@ -71,13 +72,13 @@
             <section id="ceremonia-religiosa" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
                 
                 <div class="relative z-10 max-w-3xl mx-auto">
-                    <img src="./assets/img/iglesia.gif" alt="Iglesia" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink">Ceremonia Religiosa</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4"><span>PARROQUIA:</span> Nuestra Señora de Luján</p>
-                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN::</span> Don bosco 2645 - San Miguel de Tucuman</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 27/06/2025</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span>HORARIO:</span> 21:10 HS</p>
-                    <a href="https://maps.app.goo.gl/FqECGvCoziS1a77w5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="./assets/img/iglesia.gif" alt="Iglesia" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-up" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink" data-aos="fade-up" data-aos-delay="200">Ceremonia Religiosa</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="300"><span>PARROQUIA:</span> Nuestra Señora de Luján</p>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400"><span>UBICACIÓN:</span> Don bosco 2645 - San Miguel de Tucuman</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="500"><span>DIA:</span> 27/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"><span>HORARIO:</span> 21:10 HS</p>
+                    <a href="https://maps.app.goo.gl/FqECGvCoziS1a77w5" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="700">
                         CÓMO LLEGAR
                     </a>
                 </div>
@@ -85,13 +86,13 @@
 
             <section id="recepcion" class="relative py-16 px-6 bg-light-gray-bg/50 text-dark-gray text-center">
                 <div class="max-w-3xl mx-auto">
-                    <img src="./assets/img/reciencasados.gif" alt="recien casados" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Fiesta</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4"><span >SALÓN:</span> ACIT </p>
-                    <p class="text-xl sm:text-2xl font-light mb-4"><span>UBICACIÓN::</span> av. Aconquija 867, Yerba buena</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span>DIA:</span> 27/06/2025</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"><span>HORARIO:</span> 21:45 HS</p>
-                    <a href="https://maps.app.goo.gl/XFhReTtTYKPCjYYY8" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="./assets/img/reciencasados.gif" alt="recien casados" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-up" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6" data-aos="fade-up" data-aos-delay="200">Fiesta</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="300"><span >SALÓN:</span> ACIT </p>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400"><span>UBICACIÓN:</span> av. Aconquija 867, Yerba buena</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="500"><span>DIA:</span> 27/06/2025</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"><span>HORARIO:</span> 21:45 HS</p>
+                    <a href="https://maps.app.goo.gl/XFhReTtTYKPCjYYY8" target="_blank" class="inline-block bg-primary-pink hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="700">
                         VER UBICACIÓN
                     </a>
                 </div>
@@ -99,37 +100,37 @@
 
             <section id="countdown" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-10 animate-fade-in-down">¡Pronto el gran día!</h2>
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-10" data-aos="fade-down" data-aos-duration="1000">¡Pronto el gran día!</h2>
                     
                     <div class="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 text-dark-gray mt-8 mb-12">
-                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up">
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
                             <p id="days" class="text-5xl font-bold text-dark-gray"></p>
                             <span class="text-lg mt-2 font-medium text-gray-600">Días</span>
                         </div>
-                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-100">
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
                             <p id="hours" class="text-5xl font-bold text-dark-gray"></p>
                             <span class="text-lg mt-2 font-medium text-gray-600">Horas</span>
                         </div>
-                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-200">
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
                             <p id="minutes" class="text-5xl font-bold text-dark-gray"></p>
                             <span class="text-lg mt-2 font-medium text-gray-600">Minutos</span>
                         </div>
-                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300 animate-slide-in-up delay-300">
+                        <div class="flex flex-col items-center bg-white p-6 rounded-xl shadow-xl w-36 h-36 sm:w-44 sm:h-44 transform hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
                             <p id="sec" class="text-5xl font-bold text-dark-gray"></p>
                             <span class="text-lg mt-2 font-medium text-gray-600">Segundos</span>
                         </div>
                     </div>
-                    <p class="mt-12 text-lg sm:text-xl max-w-2xl mx-auto font-inter leading-relaxed"><span>Tu presencia hará de este día un momento inolvidable. Te esperamos con alegría.</span></p>
+                    <p class="mt-12 text-lg sm:text-xl max-w-2xl mx-auto font-inter leading-relaxed" data-aos="fade-in" data-aos-delay="500"><span>Con vos compartiendo este momento, será aún más significativo. ¡Nos alegra recibirte!</span></p>
                 </div>
             </section>
 
             <section id="confirmacion" class="relative py-16 px-6 bg-light-gray-bg/50 text-center">
                 
                 <div class="relative z-10 max-w-3xl mx-auto">
-                    <img src="./assets/img/sobre.gif" alt="sobre" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink">Confirmá tu Asistencia</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-8">¡Tu presencia es muy importante para nosotros! Por favor, confirmanos tu asistencia antes del [Fecha Límite].</p>
-                    <a href="https://forms.gle/Xc7JyL55tHNp3XUy9" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                    <img src="./assets/img/sobre.gif" alt="sobre" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6 text-primary-pink" data-aos="fade-right" data-aos-delay="200">Confirmá tu Asistencia</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-left" data-aos-delay="400">¡Tu presencia es muy importante para nosotros! Por favor, confirmanos tu asistencia antes del [Fecha Límite].</p>
+                    <a href="https://forms.gle/Xc7JyL55tHNp3XUy9" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105" data-aos="zoom-in" data-aos-delay="600">
                         CONFIRMAR ASISTENCIA
                     </a>
                 </div>
@@ -137,31 +138,27 @@
 
             <section id="dress-code-section" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
                 <div class="max-w-3xl mx-auto">
-                    <img src="./assets/img/ropa_traje_vestido.jpg" alt="Dress Code" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Dress Code</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4">Pedimos asistir con vestimenta **Elegante**.</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8">¡Importante! Por favor, **evitar el color blanco**.</p>
+                    <img src="./assets/img/ropa_traje_vestido.jpg" alt="Dress Code" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6" data-aos="fade-up" data-aos-delay="200">Dress Code</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4" data-aos="fade-up" data-aos-delay="400">Pedimos asistir con vestimenta **Elegante**.</p>
                 </div>
             </section>
 
             <section id="regalos" class="relative py-16 px-6 bg-light-gray-bg/50 text-dark-gray text-center">
                 <div class="max-w-3xl mx-auto">
-                    <img src="./assets/img/gifbox.gif" alt="caja de regalos" class="rounded-full w-56 h-56 mb-6 mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Regalos</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-8 font-bold" >Tu regalo es tu presencia. Si deseas hacernos uno o un aporte para nuestra luna de miel sería el mejor obsequio.</p>
-                    <p class="text-xl sm:text-2xl font-light mb-8"> <span>CBU: 0000003100009496507226</span></p>
+                    <img src="./assets/img/gifbox.gif" alt="caja de regalos" class="rounded-full w-56 h-56 mb-6 mx-auto" data-aos="flip-right" data-aos-duration="1000">
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6" data-aos="fade-down" data-aos-delay="200">Regalos</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-8 font-bold" data-aos="fade-up" data-aos-delay="400">Tu regalo es tu presencia. Si deseas hacernos un aporte a nuestra nueva etapa sería un gran detalle, te lo agradecemos.</p>
+                    <p class="text-xl sm:text-2xl font-light mb-8" data-aos="fade-up" data-aos-delay="600"> <span>CBU: 0000003100009496507226</span></p>
                 </div>
             </section>
 
             <section id="book" class="relative py-16 px-6 bg-dark-gray/50 text-white text-center">
                 <div class="max-w-3xl mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6">Nosotros ♥</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-8 font-bold">Cada Historia de amor es diferente, Pero la nuestra es Unica!</p>
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl text-primary-pink mb-6" data-aos="fade-up" data-aos-duration="1000">Nosotros ♥</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-8 font-bold" data-aos="fade-left" data-aos-delay="500">Cada Historia de amor es diferente, Pero la nuestra es Unica!</p>
                     
-    
-                    <!-- sliders book photos Inicio -->
-    
-                    <div class="slider">
+                    <div class="slider" data-aos="fade-up" data-aos-delay="800">
                         <ul>
                             <li>
                                 <img src="./assets/img/foto1.jpg" alt="foto 1">
@@ -172,37 +169,47 @@
                             <li>
                                 <img src="./assets/img/foto3.jpg" alt="foto 3">
                             </li>
-                            
                             <li>
                                 <img src="./assets/img/foto7.jpg" alt="foto 7">
                             </li>
                         </ul>
-                            </div>
+                    </div>
 
-                            <br>
-    
-                            <!-- sliders book photos Fin -->
-
-                            <span>
-                                <a href="https://photos.app.goo.gl/29d3orxp9gh2Jgia6" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                                    Compartí tus fotos
-                                </a>
-                           </span>
+                    <br>
+                    
+                    <span data-aos="zoom-in" data-aos-delay="1200">
+                        <a href="https://photos.app.goo.gl/29d3orxp9gh2Jgia6" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+                            Compartí tus fotos
+                        </a>
+                    </span>
                 </div>
-    
             </section>
-
 
             <section id="footer" class="relative py-16 px-6 bg-dark-gray/70 text-white text-center">
                 <div class="max-w-3xl mx-auto">
-                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6">¡Gracias!</h2>
-                    <p class="text-xl sm:text-2xl font-light mb-4">Belen & Agustin</p>
-                    <p class="text-md sm:text-lg opacity-80 mt-8">© 2025 - Todos los derechos reservados.</p>
-                    <p class="text-md sm:text-lg opacity-80 mt-8">Fabian Bernardino - 3813852485</p>
+                    <h2 class="font-great-vibes text-5xl sm:text-6xl mb-6" >¡Gracias!</h2>
+                    <p class="text-xl sm:text-2xl font-light mb-4" >Belen & Agustin</p>
+                    <p class="text-md sm:text-lg opacity-80 mt-8" >© 2025 - Todos los derechos reservados.</p>
+                    <p class="text-md sm:text-lg opacity-80 mt-8" >Fabian Bernardino - 3813852485</p>
                 </div>
             </section>
 
-        </div> </div> <script src="./js/Music.js"></script>
+        </div> 
+    </div>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            // Opciones globales aquí
+            duration: 1200, // Duración por defecto para todas las animaciones (en ms)
+            once: true,    // Las animaciones se ejecutarán solo una vez (al hacer scroll hacia abajo)
+            mirror: false, // Si las animaciones deben repetirse al hacer scroll hacia arriba (si 'once' es false)
+            offset: 120,   // Desplazamiento (en px) desde la parte superior de la ventana para activar la animación
+            easing: 'ease-in-out', // Curva de aceleración por defecto
+        });
+    </script>
+    
+    <script src="./js/Music.js"></script>
     <audio id="music" autoplay loop preload="auto">
         <source src="./assets/Audio/ED SHEERAN - Perfect.mp3" type="audio/mpeg">
         Tu navegador no soporta la etiqueta audio de...
